@@ -1,0 +1,75 @@
+@import '../../style/style.sass'
+@import '../../style/fonts/nekst/stylesheet.css'
+
+.form
+    margin: 213px 48px auto 47px
+    &__title
+        font-family: 'Nekst-Black'
+        font-style: normal
+        font-weight: 900
+        font-size: 54px
+        line-height: 90%
+        color: #111111
+        margin: 0
+        width: 753px
+        height: 98px
+    &__wrapper
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: 119px 81px
+        gap: 32px 44px
+        margin-top: 32px
+    &__button
+        width: 426px
+        height: 68px
+        border-radius: 40px
+        border: none
+        background: $orange-color
+        color: #FFFFFF
+        padding: 8px 16px 12px        
+        font-family: 'Nekst-Black'
+        font-style: normal
+        font-weight: 900
+        font-size: 30px
+        line-height: 36px
+        &:hover
+            background: #111111
+        &:active
+            background: $grey-color
+
+
+@media ( max-width: 1439px )
+    .form__button
+        width: 320px
+        padding: 14px auto 18px 
+
+
+@media ( max-width: 1119px )
+    .form
+        margin: 64px 36px
+        &__button
+            width: 345px
+        &__wrapper
+            grid-template-columns: repeat(2, 345px)
+            grid-template-rows: repeat(3, 119px) 81px 68px
+            // column-gap: 6px
+            margin-top: 44px
+
+
+@media ( max-width: 767px )
+    .form
+        margin: 44px auto 64px 20px
+        &__title
+            font-size: 34px 
+            width: 207px
+            height: 124px
+        &__button
+            width: 280px
+            height: 60px
+            font-size: 22px
+            line-height: 20px
+            margin-top: 3px
+        &__wrapper
+            display: block
+            margin-top: 32px
+            justify-content: center
