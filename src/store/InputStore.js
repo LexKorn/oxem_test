@@ -11,66 +11,36 @@ export default class InputStore {
        makeAutoObservable(this); 
     };
 
-    setTypes(types) {
-        this._types = types;
+    setPrice(price) {
+        this._price = price;
     };
-
-    setBrands(brands) {
-        this._brands = brands;
+    setInitial(initial) {
+        this._initial = initial;
     };
-
-    setDevices(devices) {
-        this._devices = devices;
+    setMonths(months) {
+        this._months = months;
     };
-
-    setSelectedType(type) {
-        this.setPage(1);
-        this._selectedType = type;
+    setTotalSum(totalSum) {
+        this._totalSum = totalSum;
     };
-
-    setSelectedBrand(brand) {
-        this.setPage(1);
-        this._selectedBrand = brand;
-    };
-
-    setPage(page) {
-        this._page = page;
-    };
-
-    setTotalCount(count) {
-        this._totalCount = count;
+    setMonthPay(monthPay) {
+        this._monthPay = monthPay;
     };
 
 
-    get types() {
-        return this._types;
+    get price() {
+        return this._price;
     };
-
-    get brands() {
-        return this._brands;
+    get initial() {
+        return this._initial;
     };
-
-    get devices() {
-        return this._devices;
+    get months() {
+        return this._months;
     };
-
-    get selectedType() {
-        return this._selectedType;
-    }
-
-    get selectedBrand() {
-        return this._selectedBrand;
-    }
-
-    get page() {
-        return this._page;
+    get totalSum() {
+        return this._totalSum;
     };
-
-    get totalCount() {
-        return this._totalCount;
-    }
-
-    get limit() {
-        return this._limit;
-    }
-};
+    get monthPay() {
+        return this._monthPay;
+    };
+}
