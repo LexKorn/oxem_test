@@ -13,10 +13,10 @@
         left: 0
         border-radius: 100%
         background: $orange-color
-        &:hover
-            width: 24px
-            height: 24px
-            background: green
+        // &:hover
+        //     width: 24px
+        //     height: 24px
+        //     background: green
 
 .input
     width: 427px
@@ -45,13 +45,16 @@
             border-radius: 16px
             border: none
             background-color: $bg-color
+            &:hover
+                background: none
+                border: 2px solid #F3F3F4
         &_units
             position: absolute
             top: 60px
             right: 24px
             width: 63px
             height: 36px
-            text-align: right
+            text-align: right            
     &__scale
         position: absolute
         bottom: 7px
@@ -66,6 +69,15 @@
             height: 2px
             background-color: $orange-color
             @include circle
+#second .input__text_units
+    top: 51px
+    right: 7px
+    width: 69px
+    height: 54px
+    background: #EBEBEC
+    border-radius: 16px
+    text-align: center
+    line-height: 53px
 
 
 @media ( max-width: 1439px )
@@ -119,3 +131,12 @@
             bottom: 9px
             left: 20px
             right: 20px
+    #second .input__text_units
+        top: 33px
+        right: 6px
+        width: 67px
+        height: 48px
+        background: #E0E0E0
+        border-radius: 12px
+        text-align: center
+        line-height: 51px

@@ -2,14 +2,11 @@ import {makeAutoObservable} from 'mobx';
 
 export default class InputStore {
     constructor() {
-       this._types = [];
-       this._brands = [];
-       this._devices = [];
-       this._selectedType = {};
-       this._selectedBrand = {};
-       this._page = 1;
-       this._totalCount = 0;
-       this._limit = 8;
+       this._price = 1000000;
+       this._initial = 10;
+       this._months = 1;
+       this._totalSum = 1035000;
+       this._monthPay = 1034990;
 
        makeAutoObservable(this); 
     };

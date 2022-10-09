@@ -2,7 +2,9 @@
 @import '../../style/fonts/nekst/stylesheet.css'
 
 .form
-    margin: 213px 48px auto 47px
+    margin: 213px auto auto
+    display: flex
+    justify-content: center
     &__title
         font-family: 'Nekst-Black'
         font-style: normal
@@ -17,7 +19,8 @@
         display: grid
         grid-template-columns: repeat(3, 1fr)
         grid-template-rows: 119px 81px
-        gap: 32px 44px
+        column-gap: 32px 
+        row-gap: 44px
         margin-top: 32px
     &__button
         width: 426px
@@ -46,19 +49,20 @@
 
 @media ( max-width: 1119px )
     .form
-        margin: 64px 36px
+        margin-top: 64px
+        margin-bottom: 156px
         &__button
             width: 345px
         &__wrapper
             grid-template-columns: repeat(2, 345px)
             grid-template-rows: repeat(3, 119px) 81px 68px
-            // column-gap: 6px
             margin-top: 44px
 
 
 @media ( max-width: 767px )
     .form
-        margin: 44px auto 64px 20px
+        margin-top: 44px
+        margin-bottom: 64px
         &__title
             font-size: 34px 
             width: 207px
