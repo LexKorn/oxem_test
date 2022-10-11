@@ -2,35 +2,25 @@ import React, {useContext, useEffect, useState} from 'react';
 import { observer } from "mobx-react-lite";
 
 import { Context } from "../../index";
+import Range from "../Range/Range";
+
 import './inputField.sass';
 
 
-const InputPercent = observer(({id, title, initPay}) => {
+const InputPercent = observer(({id, title, initPay, disabled}) => {
     const {input} = useContext(Context);
     const [value, setValue] = useState(input.initial);
+    const [range, setRange] = useState(100);
 
     useEffect(() => {
-        input.setInitial(value);        
+        input.setInitial(value); 
+        setRange(range)       
     }, [value]);
+    // console.log(value);
 
-    // useEffect(() => {
-    //     if (value < 10) {
-    //         setValue(10);
-    //     } else if (value > 60) {
-    //         setValue(60);
-    //     } 
-    //     input.setInitial(value);     
-    // }, [value]);
-    
-    // useEffect(() => {
-    //     if (value < 10) {
-    //         input.setInitial(10); 
-    //     } else if (value > 60) {
-    //         input.setInitial(60); 
-    //     } else {
-    //         input.setInitial(value); 
-    //     }            
-    // }, [value]);
+    // const handleChange = (e) => {
+    //     setValue(e.target.value);
+    // };
     
 
     return (
@@ -41,18 +31,24 @@ const InputPercent = observer(({id, title, initPay}) => {
                 className="input__text input__text_value"
                 placeholder={initPay}
                 readOnly
+                disabled={disabled}
             />
             <input 
                 type="number"
                 className="input__text input__text_percent"                
                 value={value}
                 onChange={e => setValue(e.target.value)}
+                disabled={disabled}
             /><span className="input__text input__text_percent input__text_unit">%</span>
-            <div className="input__scale"><span style={{width: `${value}%`}} ></span></div>  
-            {/* <div className="slider" id='slider'>
-                <output for="fader" id="volume">0</output>
-                <input type="range" id="fader" min="0" max="600" value="0" step="1" onInputCapture={outputUpdate(value)} />
-            </div> */}
+            <Range
+                value={value}
+                handleChange={e => setValue(e.target.value)}
+                min={10}
+                max={60}
+                step={1}
+                progress={value / 60 * 100}
+                disabled={disabled}
+            />
         </div>
     );
 });

@@ -1,0 +1,79 @@
+@import '../../style/style.sass'
+
+.range
+    display: grid
+    place-items: center
+    position: relative
+    &__slider
+        -webkit-appearance: none
+        position: absolut
+        bottom: 1px
+        left: 24px
+        right: 24px
+        width: 379px
+        height: 1px
+        background-color: #E1E1E1
+        outline: none
+        --webkit-transition: 0.2s
+        transition: opacity 0.2s
+        &::-webkit-slider-thumb
+            -webkit-appearance: none
+            appearance: none
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background: $orange-color
+            cursor: pointer
+            border: none
+            &:hover
+                width: 25px
+                height: 25px            
+        &::-moz-range-thumb 
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            background: $orange-color
+            cursor: pointer
+            border: none
+            &:hover
+                width: 25px
+                height: 25px
+    &__scale
+        position: absolute
+        bottom: 7px
+        left: 24px
+        right: 24px
+        width: 379px
+        height: 1px
+        background-color: none
+        span
+            position: absolute
+            bottom: 0
+            height: 2px
+            background-color: $orange-color
+
+
+@media ( max-width: 1439px )
+    .range
+        &__slider, &__scale
+            width: 272px
+
+
+@media ( max-width: 1119px )
+    .range
+        &__slider, &__scale
+            width: 648px
+
+
+@media ( max-width: 767px )
+    .range
+        &__slider, &__scale
+            width: 240px
+            left: 20px
+            right: 20px
+
+
+@media ( max-width: 319px )
+    .range
+        &__slider, &__scale
+            width: 80%
