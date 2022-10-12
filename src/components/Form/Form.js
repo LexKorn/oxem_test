@@ -39,8 +39,10 @@ const Form = observer(() => {
         try {
             const response = await fetch('https://hookb.in/eK160jgYJ6UlaRPldJ1P', {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    // 'Access-Control-Allow-Origin': '*'
                 },
                 body: {
                     "car_coast": 4000000,
@@ -62,7 +64,7 @@ const Form = observer(() => {
             return alert(data.message);
 
         } catch (err) {
-            console.log(err.name, err.message);
+            console.log(err);
             setLoading(false);
         }
     };
