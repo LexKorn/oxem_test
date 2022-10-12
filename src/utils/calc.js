@@ -5,3 +5,7 @@ export const calcMonthPay = (price, initPay, months, percent) => {
 
     return result;
 };
+
+export const convertNum = (num) => {
+    return String(num).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};  

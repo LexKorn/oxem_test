@@ -6,7 +6,7 @@ import InputPercent from '../InputField/InputPercent';
 import OutputField from '../OutputField/OutputField';
 import Spinner from '../Spinner/Spinner';
 import { Context } from "../../index";
-import {calcMonthPay} from '../../utils/calc';
+import {calcMonthPay, convertNum} from '../../utils/calc';
 
 import './form.sass';
 
@@ -27,11 +27,7 @@ const Form = observer(() => {
         const res = calcMonthPay(input.price, initPay, input.months, percent);
         setTotalSum(res.totalSum);
         setMonthPay(res.monthPay);
-    }, [input.price, initPay, input.months]);
-
-    const convertNum = (num) => {
-        return new Intl.NumberFormat('ru-RU').format(num);
-    };   
+    }, [input.price, initPay, input.months]); 
 
     const pressHandler = async () => {
         setLoading(true);
@@ -42,7 +38,6 @@ const Form = observer(() => {
                 mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
-                    // 'Access-Control-Allow-Origin': '*'
                 },
                 body: {
                     "car_coast": 4000000,

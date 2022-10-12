@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import { observer } from "mobx-react-lite";
 
 import { Context } from "../../index";
+import { convertNum } from '../../utils/calc';
 
 import './inputField.sass';
 
@@ -49,9 +50,9 @@ const InputField = observer(({id, title, units, disabled}) => {
         <div className='input' id={id}>
             <div className='input__title'>{title}</div>
             <input
-                type="number"
+                type="text"
                 className="input__text input__text_value"
-                value={value}
+                value={id === "price" ? convertNum(value) : value}
                 onChange={e => {
                     (e.target.value > minValue) ? 
                         (e.target.value > maxValue) ? setValue(maxValue) : setValue(e.target.value)
