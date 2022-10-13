@@ -52,7 +52,7 @@ const InputField = observer(({id, title, units, disabled}) => {
             <input
                 type="text"
                 className="input__text input__text_value"
-                value={id === "price" ? convertNum(value) : value}
+                value={value}
                 onChange={e => {
                     (e.target.value > minValue) ? 
                         (e.target.value > maxValue) ? setValue(maxValue) : setValue(e.target.value)

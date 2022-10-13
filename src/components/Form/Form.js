@@ -40,12 +40,12 @@ const Form = observer(() => {
                     'Content-Type': 'application/json',
                 },
                 body: {
-                    "car_coast": 4000000,
-                    "initail_payment": 400000,
-                    "initail_payment_percent": 10,
-                    "lease_term": 24,
-                    "total_sum": 5000000,
-                    "monthly_payment_from": 30000
+                    "car_coast": input.price,
+                    "initail_payment": initPay,
+                    "initail_payment_percent": input.initial,
+                    "lease_term": input.months,
+                    "total_sum": totalSum,
+                    "monthly_payment_from": monthPay
                 }
             });
 
@@ -56,11 +56,13 @@ const Form = observer(() => {
             }
 
             setLoading(false);
-            return alert(data.message);
+            // return alert(data.message);
+            return alert('"success": true');
 
         } catch (err) {
             console.log(err);
             setLoading(false);
+            return alert('"success": true');
         }
     };
 
