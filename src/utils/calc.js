@@ -6,6 +6,10 @@ export const calcMonthPay = (price, initPay, months, percent) => {
     return result;
 };
 
-export const convertNum = (num) => {
+export const convertNumToStr = (num) => {
     return String(num).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};  
+
+export const convertStrToNum = (str) => {
+    return Number(str.replace(/\s+/g, ''));
 };  

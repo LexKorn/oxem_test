@@ -6,7 +6,7 @@ import InputPercent from '../InputField/InputPercent';
 import OutputField from '../OutputField/OutputField';
 import Spinner from '../Spinner/Spinner';
 import { Context } from "../../index";
-import {calcMonthPay, convertNum} from '../../utils/calc';
+import {calcMonthPay, convertNumToStr} from '../../utils/calc';
 
 import './form.sass';
 
@@ -72,10 +72,10 @@ const Form = observer(() => {
                 <h1 className='form__title'>Рассчитайте стоимость автомобиля в лизинг</h1>
                 <div className='form__wrapper'>
                     <InputField id="price" title="Стоимость автомобиля" units="₽" disabled={loading} />
-                    <InputPercent id="init" title="Первоначальный взнос" initPay={convertNum(initPay)} disabled={loading} />
+                    <InputPercent id="init" title="Первоначальный взнос" initPay={convertNumToStr(initPay)} disabled={loading} />
                     <InputField id="months" title="Срок лизинга" units="мес." disabled={loading}/>
-                    <OutputField title="Сумма договора лизинга" result={convertNum(totalSum)} />
-                    <OutputField title="Ежемесячный платеж от" result={convertNum(monthPay)} />
+                    <OutputField title="Сумма договора лизинга" result={convertNumToStr(totalSum)} />
+                    <OutputField title="Ежемесячный платеж от" result={convertNumToStr(monthPay)} />
                     <button 
                         className='form__button' 
                         onClick={pressHandler} 
